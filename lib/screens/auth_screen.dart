@@ -14,16 +14,13 @@ class _AuthScreenState extends State<AuthScreen> {
 
   bool isLoading = false;
 
-  void _submitAuthForm(
-      String email, String password, String username, bool isLogin) {
+  void _submitAuthForm(String email, String password, String username, bool isLogin) {
     setState(() {
       isLoading = true;
     });
     if (isLogin) {
       //TODO: Hesap varsa giriş yap
-      _auth
-          .signInWithEmailAndPassword(email: email, password: password)
-          .then((user) {
+      _auth.signInWithEmailAndPassword(email: email, password: password).then((user) {
         print(user);
       }).catchError((error) {
         print(error);
@@ -39,9 +36,7 @@ class _AuthScreenState extends State<AuthScreen> {
       });
     } else {
       //TODO: Hesap yoksa kayıt ol
-      _auth
-          .createUserWithEmailAndPassword(email: email, password: password)
-          .then((user) async {
+      _auth.createUserWithEmailAndPassword(email: email, password: password).then((user) async {
         print(user);
         //TODO: Firestore'e kayıt
         await FirebaseFirestore.instance
@@ -65,8 +60,6 @@ class _AuthScreenState extends State<AuthScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Theme.of(context).primaryColorDark,
-        body: AuthForm(_submitAuthForm, isLoading));
+    return Scaffold(backgroundColor: Theme.of(context).primaryColorDark, body: AuthForm(_submitAuthForm, isLoading));
   }
 }

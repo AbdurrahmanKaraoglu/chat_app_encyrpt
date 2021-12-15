@@ -4,7 +4,7 @@ class MessageBubble extends StatelessWidget {
   final String message;
   final bool isMe;
   final Key? key;
-  MessageBubble(this.message, this.isMe,{this.key});
+  MessageBubble(this.message, this.isMe, {this.key});
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,7 +15,7 @@ class MessageBubble extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
           margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
           decoration: BoxDecoration(
-            color:  isMe ? Colors.orange : Theme.of(context).accentColor,
+            color: isMe ? Colors.orange : Theme.of(context).accentColor,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12),
               topRight: Radius.circular(12),

@@ -1,6 +1,5 @@
 import 'package:chat_app_encyrpt/screens/auth_screen.dart';
 import 'package:chat_app_encyrpt/screens/chat_screen.dart';
-import 'package:chat_app_encyrpt/screens/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +23,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Chat App Encyrpt',
       theme: theme.copyWith(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(color: Colors.white, elevation: 0.8),
         colorScheme: theme.colorScheme.copyWith(secondary: Colors.deepPurple),
         buttonTheme: ButtonTheme.of(context).copyWith(
           buttonColor: Colors.green,
@@ -39,7 +40,6 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasData) {
             return ChatScreen();
           }
-          //return AuthScreen();
           return AuthScreen();
         },
       ),

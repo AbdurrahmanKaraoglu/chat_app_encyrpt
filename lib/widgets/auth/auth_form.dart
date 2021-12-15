@@ -141,34 +141,23 @@ class _AuthFormState extends State<AuthForm> {
                   const SizedBox(
                     height: 20,
                   ),
-                  if (widget.isLoading) const CircularProgressIndicator(),
+                  if (widget.isLoading) CircularProgressIndicator(),
                   if (!widget.isLoading)
                     PrimaryButton(
                       text: (_isLogin ? 'Giriş Yap' : 'Kayıt Ol'),
                       press: _trySubmit,
                     ),
-                  // ElevatedButton(
-                  //   child: Text(_isLogin ? 'Giriş Yap' : 'Kayıt Ol'),
-                  //   onPressed: _trySubmit,
-                  // ),
                   const SizedBox(
                     height: 20,
                   ),
                   FillOutlineButton(
-                      press: () {
-                        setState(() {
-                          _isLogin = !_isLogin;
-                        });
-                      },
-                      text: (_isLogin ? 'Kayıt Ol' : 'Giriş Yap')),
-                  // TextButton(
-                  //   child: Text(_isLogin ? 'Kayıt Ol' : 'Giriş Yap'),
-                  //   onPressed: () {
-                  //     setState(() {
-                  //       _isLogin = !_isLogin;
-                  //     });
-                  //   },
-                  // ),
+                    press: () {
+                      setState(() {
+                        _isLogin = !_isLogin;
+                      });
+                    },
+                    text: (_isLogin ? 'Kayıt Ol' : 'Giriş Yap'),
+                  ),
                 ],
               ),
             ),
